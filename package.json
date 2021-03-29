@@ -1,0 +1,29 @@
+{
+  "name": "lu-table-tennis",
+  "version": "1.0.0",
+  "description": "This is for Lehigh University Table Tennis Club",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "init": "./install-project.sh",
+    "start": "npm run start --prefix ./server",
+    "heroku-prebuild": "npm run init",
+    "heroku-postbuild": "npm run build --prefix ./client",
+    "watch-client": "npm run build-watch --prefix ./client",
+    "watch-server": "npm run watch --prefix ./server",
+    "watch-project": "concurrently \"npm run watch-client\" \"npm run watch-server\" --timestamp-format \"HH:mm:ss\" --prefix \"{time} [{name}]\" --kill-others --names \"client,server\" "
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "supercindy199969@gmail.com"
+  },
+  "keywords": [
+    "tabletennis"
+  ],
+  "author": "Cyndy Meng",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^6.0.0"
+  }
+}
